@@ -15,10 +15,13 @@ function addToDiv (planet) {
 function capitalize (planet) {
     return " " + planet.charAt(0).toUpperCase() + planet.slice(1);
 }
-
-el.innerHTML = el.innerHTML + planets.map(capitalize);
+el.innerHTML = el.innerHTML + "<p>" + planets.map(capitalize) + "</p><br>";
 
 // Use the filter method to create a new array that contains planets with the letter 'e'
+function includesE(planet) {
+    return  planet.includes("e");
+}
+el.innerHTML = el.innerHTML + planets.filter(includesE);
 
 // Use the reduce method to create a sentence from the words in the following array
 
